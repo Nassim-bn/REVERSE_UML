@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.univrouen</groupId>
+    <artifactId>umlreverse</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>umlreverse</name>
+
+    <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <maven.compiler.source>17</maven.compiler.source>
+      <maven.compiler.target>17</maven.compiler.target>
+      <javafx.version>21.0.1</javafx.version>
+      <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
+      <mainClass>fr.univrouen.umlreverse.MainApp</mainClass>
+    </properties>
+
+     <dependencies>
+        <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-controls</artifactId>
+          <version>21.0.1</version>
+        </dependency>
+        <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-fxml</artifactId>
+          <version>21.0.1</version>
+        </dependency>
+
+	 <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-swing</artifactId>
+          <version>21.0.1</version>
+        </dependency>
+
+        <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-maven-plugin</artifactId><version>0.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>4.13.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId> <!--Rester sur la version 4-->
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+         <dependency>
+             <groupId>org.apache.commons</groupId>
+             <artifactId>commons-lang3</artifactId>
+             <version>3.14.0</version>
+         </dependency>
+
+         <dependency>
+             <groupId>org.mockito</groupId>
+             <artifactId>mockito-core</artifactId>
+             <version>5.10.0</version>
+             <scope>test</scope>
+         </dependency>
+         <dependency>
+             <artifactId>assertj-core</artifactId>
+             <groupId>org.assertj</groupId>
+             <version>3.25.3</version>
+             <scope>test</scope>
+         </dependency>
+         <!-- ******************************pdfbox***************************-->
+         <dependency>
+    		<groupId>org.apache.pdfbox</groupId>
+    		<artifactId>pdfbox</artifactId>
+   			 <version>2.0.24</version> <!-- or the latest version -->
+		</dependency>
+     </dependencies>
+
+
+    <organization>
+        <!-- Used as the 'Vendor' for JNLP generation -->
+        <name>Your Organisation</name>
+    </organization>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                  <release>${maven.compiler.target}</release>
+                  <showWarnings>true</showWarnings>
+                  <showDeprecation>true</showDeprecation>
+                </configuration>
+            </plugin>
+            <plugin>
+              <groupId>org.openjfx</groupId>
+              <artifactId>javafx-maven-plugin</artifactId>
+              <version>${javafx.maven.plugin.version}</version>
+              <configuration>
+                <mainClass>${mainClass}</mainClass>
+                <options>
+                  <option>--add-opens</option>
+                  <option>fr.univrouen/java.lang=jfxsample</option>
+                </options>
+              </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.16</version>
+                <configuration>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>${java.home}/lib/jfxrt.jar</additionalClasspathElement>
+                    </additionalClasspathElements>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

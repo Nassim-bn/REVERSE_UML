@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="toolshortcuts" prefHeight="80.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univrouen.umlreverse.ui.view.util.ToolShortcutsController">
+    
+        <ToolBar>
+            <items>
+                <Region/>
+                <HBox >
+                    <Button text="file" />
+                    <Button text="save" />
+                    <Button text="help" />
+                    
+                </HBox>
+            </items>
+        </ToolBar>
+    
+</AnchorPane>

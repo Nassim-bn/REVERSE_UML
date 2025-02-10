@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+
+<MenuBar fx:id="bar" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.univrouen.umlreverse.ui.view.MenuController">
+   <menus>
+      <Menu mnemonicParsing="false" text="Fichier">
+         <items>
+            <Menu mnemonicParsing="false" text="Projet">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newProjet" text="Nouveau">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem disable="false" mnemonicParsing="false" onAction="#openProjet" styleClass="iconOpenProject" text="Ouvrir">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Diagramme">
+              <items>
+                  <Menu mnemonicParsing="false" text="Nouveau">
+                    <items>
+                      <MenuItem fx:id="newClass" disable="true" mnemonicParsing="false" onAction="#newClass" text="Classe">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                      </MenuItem>
+                        <MenuItem fx:id="newSequence" disable="true" mnemonicParsing="false" onAction="#newSequence" text="Séquence" />
+                      <MenuItem fx:id="newUseCase" disable="true" mnemonicParsing="false" onAction="#newUseCase" text="Cas d’utilisation" />
+                        <MenuItem fx:id="newPackage" disable="true" mnemonicParsing="false" onAction="#newPackage" text="Paquetage" />
+                    </items>
+                  </Menu>
+              </items>
+            </Menu>
+            <MenuItem fx:id="saveProject" disable="true" mnemonicParsing="false" onAction="#save" text="Enregistrer">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+            </MenuItem>
+            <MenuItem fx:id="saveAsProject" disable="true" mnemonicParsing="false" onAction="#saveAs" text="Enregistrer sous…">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+               </accelerator>
+            </MenuItem>
+            <Menu mnemonicParsing="false" text="Exporter...">
+              <items>
+                  <MenuItem fx:id="exportToPuml" disable="true" mnemonicParsing="false" onAction="#exportPUML" text="PlantUML" />
+                  <MenuItem fx:id="exportToXMI" disable="true" mnemonicParsing="false" onAction="#exportXMI" text="XMI" />
+                  <MenuItem fx:id="exportToPicture" disable="true" mnemonicParsing="false" onAction="#exportImg" text="Image" />
+                  <MenuItem fx:id="pdf" disable="true" mnemonicParsing="false" onAction="#exportPdf" text="PDF">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+              </items>
+            </Menu>
+            <MenuItem fx:id="print" disable="true" mnemonicParsing="false" onAction="#print" text="Imprimer" />
+            <Menu mnemonicParsing="false" text="Importer...">
+              <items>
+                  <MenuItem fx:id="importPuml" disable="true" mnemonicParsing="false" onAction="#importPuml" text="PlantUML" />
+                  <MenuItem fx:id="importXMI" mnemonicParsing="false" onAction="#importXMI" text="XMI" />
+                  <MenuItem fx:id="importJava" disable="true" mnemonicParsing="false" onAction="#importJava" text="Classes Java">
+                          <accelerator>
+                              <KeyCodeCombination alt="UP" code="J" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                  </MenuItem>
+                  <MenuItem fx:id="importJavaPackage" disable="true" mnemonicParsing="false" onAction="#importJavaPackage" text="Paquetage Java" />
+              </items>
+            </Menu>
+            <SeparatorMenuItem mnemonicParsing="false" />        
+            <MenuItem mnemonicParsing="false" onAction="#close" text="Fermer" />
+         </items>
+      </Menu>
+      <Menu mnemonicParsing="false" text="Vue">
+         <items>
+            <Menu mnemonicParsing="false" text="Zoom...">
+              <items>
+                  <MenuItem fx:id="zoomIn" disable="true" mnemonicParsing="false" onAction="#zoomIn" text="Zoom avant" />
+                  <MenuItem fx:id="zoomOut" disable="true" mnemonicParsing="false" onAction="#zoomOut" text="Zoom arrière" />
+              </items>
+            </Menu>
+            <CheckMenuItem fx:id="toolbar" mnemonicParsing="false" onAction="#showToolbar" selected="true" text="Afficher la barre d’outils" />
+			<CheckMenuItem fx:id="explorer" mnemonicParsing="false" onAction="#showExplorer" selected="true" text="Afficher l’explorateur" />
+         </items>
+      </Menu>
+   </menus>
+</MenuBar>
