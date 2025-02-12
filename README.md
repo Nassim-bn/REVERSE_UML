@@ -3,21 +3,24 @@
 
 This project is an improved version of the "UML Reverse" application, designed for creating, managing, and manipulating UML diagrams. It was developed as part of the final year project for a Bachelor's degree in Computer Science at the University of Rouen.
 
+For more information, refer to the project report in this directory named ***RapportDiagrammesUML***, which provides more details in French.
+
 ## Table of Contents
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributors](#contributors)
-- [Acknowledgments](#acknowledgments)
-- [Future Improvements](#future-improvements)
+- [UML Diagram Creator](#uml-diagram-creator)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributors](#contributors)
+  - [Acknowledgments](#acknowledgments)
+  - [Future Improvements](#future-improvements)
 
 ---
 
 ## Project Overview
 The goal of this project is to enhance an existing UML diagram application by improving its functionalities, specifically for class diagrams. The original application was developed using Java 7 with JavaFX for the user interface. Our version focuses on better usability, new features, and improved project management.
-
 The application supports:
 - Creating and managing UML diagrams.
 - Importing from PlantUML files and Java packages.
